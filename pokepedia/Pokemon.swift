@@ -10,18 +10,18 @@ import Foundation
 
 class Pokemon {
     private var _name: String!
-    private var _pokemonId: Int!
+    private var _pokedexId: Int!
     
     var name: String {
         return _name
     }
     
-    var pokemonId: Int {
-        return _pokemonId
+    var pokedexId: Int {
+        return _pokedexId
     }
     
-    init (name: String, pokemonId: Int){
+    init (name: String, pokedexId: Int){
          self._name = name
-         self._pokemonId = pokemonId
+         self._pokedexId = pokedexId
     }
 }
