@@ -196,6 +196,9 @@
                                                 <exclude reference="ttd-wB-dOE"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="bsc-Gn-VeL" eventType="touchUpInside" id="P58-nc-dmd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96930533649999995" green="0.4629471302" blue="0.65045309070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,7 +244,7 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-Ze-KKN">
                                                 <rect key="frame" x="110" y="0.0" width="450" height="110"/>
-                                                <mutableString key="text">Los primeros fósiles parecidos a blatodeos datan del periodo Carbonífero, hace 354–295 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo.  224–444 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo. Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros.</mutableString>
+                                                <string key="text">Los primeros fósiles parecidos a blatodeos datan del periodo Carbonífero, hace 354–295 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo.  224–444 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo. Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -251,27 +254,27 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uFz-fg-NB8">
                                         <rect key="frame" x="0.0" y="198" width="560" height="17"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-uB-new">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIz-uB-new">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="17"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.96930533647537231" green="0.46294713020324707" blue="0.65045309066772461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Grass/Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-KO-oT9">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Grass/Fire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnt-KO-oT9">
                                                 <rect key="frame" x="140" y="0.0" width="140" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Defence:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-ry-8Ny">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Defence:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-ry-8Ny">
                                                 <rect key="frame" x="280" y="0.0" width="140" height="17"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.96930533647537231" green="0.46294713020324707" blue="0.65045309066772461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="121" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-8a-A8l">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="121" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-8a-A8l">
                                                 <rect key="frame" x="420" y="0.0" width="140" height="17"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -409,7 +412,18 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attackLbl" destination="D4m-x1-U15" id="n8m-SS-eV7"/>
+                        <outlet property="currentEvoImg" destination="YYQ-Uf-XGi" id="QuW-nf-Kgi"/>
+                        <outlet property="defenseLbl" destination="I2h-8a-A8l" id="GRp-T5-VNB"/>
+                        <outlet property="descriptionLbl" destination="FQa-Ze-KKN" id="Fpb-ZT-RyF"/>
+                        <outlet property="evoLbl" destination="q8W-5V-5Dc" id="QWG-bc-5Ns"/>
+                        <outlet property="heightLbl" destination="AWs-VN-Rn9" id="JYO-P8-ISS"/>
+                        <outlet property="mainImg" destination="41j-ic-3Un" id="UOF-N2-1J6"/>
                         <outlet property="nameLbl" destination="lLu-mm-yKD" id="PG6-eW-Qjp"/>
+                        <outlet property="nextEvoImg" destination="EP5-BY-RjV" id="JAv-nM-4Qd"/>
+                        <outlet property="pokedexLbl" destination="BxG-0J-GMJ" id="gbg-Ai-BWX"/>
+                        <outlet property="typeLbl" destination="Nnt-KO-oT9" id="Ker-4G-Isz"/>
+                        <outlet property="weightLbl" destination="aXU-Qj-J7N" id="RYb-JM-szb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrn-RT-6tG" userLabel="First Responder" sceneMemberID="firstResponder"/>
