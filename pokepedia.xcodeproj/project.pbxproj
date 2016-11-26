@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0308268F98D709F829CD417C /* Pods_pokepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2A9611D1968EE0B8B7ADA0 /* Pods_pokepedia.framework */; };
 		9307E2721D2D51420061868A /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9307E2711D2D51420061868A /* PokeCell.swift */; };
 		931A5E1E1DE468A60058914A /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931A5E1D1DE468A60058914A /* csv.swift */; };
 		931A5E231DE83A790058914A /*  pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 931A5E221DE83A790058914A /*  pokemon.ttf */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		155610EFD044C82423856971 /* Pods-pokepedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokepedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-pokepedia/Pods-pokepedia.release.xcconfig"; sourceTree = "<group>"; };
+		2A2A9611D1968EE0B8B7ADA0 /* Pods_pokepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pokepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C483ECFB9BDF6347EDCDE43 /* Pods-pokepedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokepedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pokepedia/Pods-pokepedia.debug.xcconfig"; sourceTree = "<group>"; };
 		9307E2711D2D51420061868A /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		931A5E1D1DE468A60058914A /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = csv.swift; path = pokepedia/csv.swift; sourceTree = "<group>"; };
 		931A5E221DE83A790058914A /*  pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = " pokemon.ttf"; sourceTree = "<group>"; };
@@ -43,12 +47,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0308268F98D709F829CD417C /* Pods_pokepedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45C4B66A6923FEA03B743159 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C483ECFB9BDF6347EDCDE43 /* Pods-pokepedia.debug.xcconfig */,
+				155610EFD044C82423856971 /* Pods-pokepedia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9307E2701D2D40BD0061868A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +106,8 @@
 			children = (
 				93B88B1E1D19804D00440C52 /* pokepedia */,
 				93B88B1D1D19804D00440C52 /* Products */,
+				45C4B66A6923FEA03B743159 /* Pods */,
+				9C5FA158D7FFDDE7CF3F8F5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +144,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9C5FA158D7FFDDE7CF3F8F5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A2A9611D1968EE0B8B7ADA0 /* Pods_pokepedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93B88B2E1D19804D00440C52 /* Build configuration list for PBXNativeTarget "pokepedia" */;
 			buildPhases = (
+				85202D330D3F9EAB71FCADBE /* [CP] Check Pods Manifest.lock */,
 				93B88B181D19804D00440C52 /* Sources */,
 				93B88B191D19804D00440C52 /* Frameworks */,
 				93B88B1A1D19804D00440C52 /* Resources */,
+				5A7169368F1E247296BEEEF5 /* [CP] Embed Pods Frameworks */,
+				B30476F4AC37E882BB843C86 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A7169368F1E247296BEEEF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokepedia/Pods-pokepedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85202D330D3F9EAB71FCADBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B30476F4AC37E882BB843C86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pokepedia/Pods-pokepedia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93B88B181D19804D00440C52 /* Sources */ = {
@@ -320,6 +395,7 @@
 		};
 		93B88B2F1D19804D00440C52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C483ECFB9BDF6347EDCDE43 /* Pods-pokepedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pokepedia/Info.plist;
@@ -331,6 +407,7 @@
 		};
 		93B88B301D19804D00440C52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 155610EFD044C82423856971 /* Pods-pokepedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = pokepedia/Info.plist;
