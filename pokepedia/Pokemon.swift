@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import Alamofire
 
 class Pokemon {
-    private var _name: String!
-    private var _pokedexId: Int!
-    private var _description:String!
-    private var _type:String!
-    private var _defence:String!
-    private var _height:String!
-    private var _weight:String!
-    private var _attack:String!
-    private var _nexEvoTxt:String!
+    fileprivate var _name: String!
+    fileprivate var _pokedexId: Int!
+    fileprivate var _description:String!
+    fileprivate var _type:String!
+    fileprivate var _defence:String!
+    fileprivate var _height:String!
+    fileprivate var _weight:String!
+    fileprivate var _attack:String!
+    fileprivate var _nexEvoTxt:String!
+    fileprivate var _pokemonUrl:String!
     
     var name: String {
         return _name
@@ -27,8 +29,25 @@ class Pokemon {
         return _pokedexId
     }
     
+    
     init (name: String, pokedexId: Int){
          self._name = name
          self._pokedexId = pokedexId
+        
+        _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
+    }
+    
+    func downloadPokemonDetails (completed:DownloadComplete) {
+        
+        let url = _pokemonUrl!
+        Alamofire.request(url).response { response in // method defaults to `.get`
+            debugPrint(response)
+        }
+        
+        
+            //{ (request: NSURLRequest?, response: HTTPURLResponse?, result: Result<AnyObject>) -> Void in
+            
+            //print(result.value.debugDescription)
+        //}
     }
 }
