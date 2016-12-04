@@ -19,7 +19,8 @@ class Pokemon {
     fileprivate var _weight:String!
     fileprivate var _attack:String!
     fileprivate var _nexEvoTxt:String!
-    fileprivate var _pokemonUrl:String!
+    fileprivate var _pokemonUrl_v1:String!
+    fileprivate var _pokemonUrl_v2:String!
     
     var name: String {
         return _name
@@ -35,51 +36,37 @@ class Pokemon {
         self._name = name
         self._pokedexId = pokedexId
         
-        _pokemonUrl = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
+        _pokemonUrl_v2 = "\(URL_BASE)\(URL_POKEMON_V2)\(self.pokedexId)/"
+        _pokemonUrl_v1 = "\(URL_BASE)\(URL_POKEMON_V1)\(self.pokedexId)/"
     }
     
     
     
     func downloadPokemonDetails (completed:DownloadComplete) {
         
-        let url = _pokemonUrl!
+        let url = _pokemonUrl_v1!
         Alamofire.request(url, encoding: JSONEncoding.default).responseJSON { response in
             print(response)
-            //to get status code
-            if let status = response.response?.statusCode {
-                switch(status){
-                case 201:
-                    print("example success")
-                default:
-                    print("error with response status: \(status)")
-                }
-            }
+           
             //to get JSON return value
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
-                if let weight = dict["weight"] as? Int {
+                if let weight = dict["weight"] as? String {
                     self._weight = "\(weight)"
                 }
                 
-                if let height = dict["height"] as? Int {
+                if let height = dict["height"] as? String {
                     self._height = "\(height)"
                 }
                 
-                guard let statsNode = dict["stats"] as? [[String:Any]] else { return }
                 
-                for (number, statNode) in statsNode.enumerated() {
-                    
-                    guard let statValue = statNode["base_stat"] as? Int else { continue }
-                    
-                    switch number {
-                    case 3:
-                        self._defense = "\(statValue)"
-                    case 4:
-                        self._attack = "\(statValue)"
-                    default:
-                        break
-                    }
-                    
+                if let attack = dict["attack"] as? Int {
+                    self._attack = "\(attack)"
+                }
+                
+                
+                if let defense = dict["defense"] as? Int {
+                    self._defense = "\(defense)"
                 }
                 
                 print(self._weight)
@@ -87,19 +74,16 @@ class Pokemon {
                 print(self._attack)
                 print(self._defense)
                 
-                if let types = dict["types"] as? [Dictionary<String, AnyObject>], types.count > 0 {
-                    if let type = types[0]["type"] as? Dictionary<String, String>{
-                        if let name = type["name"] {
+                if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
+                        if let name = types[0]["name"] {
                             self._type = name
                         }
-                        
-                    }
+                    
                     
                     if types.count > 1 {
                         
                         for x in 1 ..< types.count{
-                            if let type = types[x]["type"] {
-                                if let name = type["name"]! {
+                            if let name = types[x]["name"] {
                                     self._type! += "/\(name)"
                                 }
                             }
@@ -107,8 +91,27 @@ class Pokemon {
                         }
                     }
                     print(self._type)
+                    
+                    if let descArr = dict["descriptions"] as? [Dictionary<String,String>], descArr.count > 0 {
+                        if let url = descArr[0]["resource_uri"]{
+                            let url_desc = ("\(URL_BASE)\(url)")
+                            
+                            Alamofire.request(url_desc).responseJSON { response in
+                                if let descDict = response.result.value as? Dictionary<String, AnyObject> {
+                                    
+                                    if let description = descDict["description"] as? String {
+                                        
+                                        self._description = description
+                                        print(self._description)
+                                    }
+                                }
+                            }
+                        }
+                        
+                    } else {
+                        self._description = ""
+                    }
                 }
             }
         }
     }
-}
