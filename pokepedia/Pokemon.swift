@@ -18,7 +18,9 @@ class Pokemon {
     fileprivate var _height:String!
     fileprivate var _weight:String!
     fileprivate var _attack:String!
-    fileprivate var _nexEvoTxt:String!
+    fileprivate var _nextEvoTxt:String!
+    fileprivate var _nextEvoId:String!
+    fileprivate var _nextEvoLvl:String!
     fileprivate var _pokemonUrl_v1:String!
     fileprivate var _pokemonUrl_v2:String!
     
@@ -36,6 +38,7 @@ class Pokemon {
         self._name = name
         self._pokedexId = pokedexId
         
+        //Different API versions, JSON of v2 currentlt is not perfect
         _pokemonUrl_v2 = "\(URL_BASE)\(URL_POKEMON_V2)\(self.pokedexId)/"
         _pokemonUrl_v1 = "\(URL_BASE)\(URL_POKEMON_V1)\(self.pokedexId)/"
     }
@@ -111,7 +114,36 @@ class Pokemon {
                     } else {
                         self._description = ""
                     }
+                    if let evolutions = dict["evolutions"] as? [Dictionary<String,AnyObject>], evolutions.count > 0 {
+                        
+                        if let to = evolutions[0]["to"] as? String {
+                            
+                            //Can't support Mega pokemons right now, but api still had mega data
+                            if to.range(of: "mega") == nil {
+                                
+                                if let uri = evolutions[0]["resource_uri"] as? String {
+                                    
+                                    let newStr = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                    
+                                    let num = newStr.replacingOccurrences(of: "/", with: "")
+                                    
+                                    self._nextEvoId = num
+                                    self._nextEvoTxt = to
+                                    
+                                    if let lvl = evolutions[0]["level"] as? Int{
+                                        
+                                        self._nextEvoLvl = "\(lvl)"
+                                    }
+                                    
+                                    print(self._nextEvoId)
+                                    print(self._nextEvoTxt)
+                                    print(self._nextEvoLvl)
+                                }
+                            }
+                        }
+                        
                 }
             }
         }
     }
+}
