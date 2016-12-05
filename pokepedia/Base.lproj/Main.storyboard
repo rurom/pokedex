@@ -200,7 +200,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="backBtnPressed:" destination="bsc-Gn-VeL" eventType="touchUpInside" id="P58-nc-dmd"/>
+                                            <action selector="backBtnPressedWithSender:" destination="bsc-Gn-VeL" eventType="touchUpInside" id="FUb-xE-gT1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -239,15 +239,14 @@
                                         <rect key="frame" x="0.0" y="72" width="343" height="110"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="162" translatesAutoresizingMaskIntoConstraints="NO" id="41j-ic-3Un">
-                                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="110"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="110" id="EXt-9k-57N"/>
                                                     <constraint firstAttribute="width" constant="110" id="J2H-mQ-fk4"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-Ze-KKN">
-                                                <rect key="frame" x="110" y="0.0" width="233" height="110"/>
-                                                <string key="text">Los primeros fósiles parecidos a blatodeos datan del periodo Carbonífero, hace 354–295 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo.  224–444 millones de años. Aun así, estos fósiles difieren de los blatodeos modernos en que disponen de un largo. Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros Los primeros.</string>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-Ze-KKN">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="110"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>

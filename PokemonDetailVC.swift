@@ -31,23 +31,52 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
 
         nameLbl.text = pokemon.name
-        mainImg.image = UIImage(named: "\(pokemon.pokedexId)")
+        let img = UIImage(named: "\(pokemon.pokedexId)")
+        mainImg.image = img
+        currentEvoImg.image = img
         
-        pokemon.downloadPokemonDetails { () -> () in
-        
+        pokemon.downloadPokemonDetails {() -> () in
+        //this will be called after download is done
+            self.updateUI()
+
         }
+    }
+    
+    func updateUI() {
         
+        descriptionLbl.text = pokemon.description
+        typeLbl.text = pokemon.type
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        pokedexLbl.text = "\(pokemon.pokedexId)"
+        weightLbl.text = pokemon.weight
+        attackLbl.text = pokemon.attack
+        
+        if pokemon.nextEvoId == "" {
+            evoLbl.text = "No Evolutions"
+            nextEvoImg.isHidden = true
+        } else {
+            nextEvoImg.isHidden = false
+            nextEvoImg.image = UIImage(named: pokemon.nextEvoId)
+            var str = "Next Evolution: \(pokemon.nextEvoTxt)"
+            
+            if pokemon.nextEvoLvl != "" {
+                
+                str += " - LVL: \(pokemon.nextEvoLvl)"
+                
+            }
+        }
     }
     
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func backBtnPressed(_ sender: AnyObject) {
+}
+
+    @IBAction func backBtnPressed(sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
 
-
 }
+

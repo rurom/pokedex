@@ -32,6 +32,68 @@ class Pokemon {
         return _pokedexId
     }
     
+    var description: String {
+        if _description == nil {
+            _description = ""
+        }
+        return _description
+    }
+    
+    var type: String {
+        if _type == nil {
+            _type = ""
+        }
+        return _type
+    }
+    
+    var defense: String {
+        if _defense == nil {
+            _defense = ""
+        }
+        return _defense
+    }
+    
+    var height: String {
+        if _height == nil {
+            _height = ""
+        }
+        return _height
+    }
+    
+    var weight: String {
+        if _weight == nil {
+            _weight = ""
+        }
+        return _weight
+    }
+    
+    var attack: String {
+        if _attack == nil {
+            _attack = ""
+        }
+        return _attack
+    }
+    
+    var nextEvoTxt: String {
+        if _nextEvoTxt == nil {
+            _nextEvoTxt = ""
+        }
+        return _nextEvoTxt
+    }
+    
+    var nextEvoId: String {
+        if _nextEvoId == nil {
+            _nextEvoId = ""
+        }
+        return _nextEvoId
+    }
+    
+    var nextEvoLvl: String {
+        if _nextEvoLvl == nil {
+            _nextEvoLvl = ""
+        }
+        return _nextEvoLvl
+    }
     
     
     init (name: String, pokedexId: Int){
@@ -45,7 +107,7 @@ class Pokemon {
     
     
     
-    func downloadPokemonDetails (completed:DownloadComplete) {
+    func downloadPokemonDetails (completed:@escaping DownloadComplete) {
         
         let url = _pokemonUrl_v1!
         Alamofire.request(url, encoding: JSONEncoding.default).responseJSON { response in
@@ -108,6 +170,8 @@ class Pokemon {
                                         print(self._description)
                                     }
                                 }
+                                
+                                completed()
                             }
                         }
                         
