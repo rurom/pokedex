@@ -134,10 +134,10 @@ class Pokemon {
                     self._defense = "\(defense)"
                 }
                 
-                print(self._weight)
-                print(self._height)
-                print(self._attack)
-                print(self._defense)
+                //print(self._weight)
+                //print(self._height)
+                //print(self._attack)
+                //print(self._defense)
                 
                 if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
                         if let name = types[0]["name"] {
@@ -199,9 +199,9 @@ class Pokemon {
                                         self._nextEvoLvl = "\(lvl)"
                                     }
                                     
-                                    print(self._nextEvoId)
-                                    print(self._nextEvoTxt)
-                                    print(self._nextEvoLvl)
+                                    //print(self._nextEvoId)
+                                    //print(self._nextEvoTxt)
+                                    //print(self._nextEvoLvl)
                                 }
                             }
                         }

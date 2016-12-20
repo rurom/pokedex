@@ -30,7 +30,7 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLbl.text = pokemon.name
+        nameLbl.text = pokemon.name.capitalized
         let img = UIImage(named: "\(pokemon.pokedexId)")
         mainImg.image = img
         currentEvoImg.image = img
@@ -65,6 +65,7 @@ class PokemonDetailVC: UIViewController {
                 str += " - LVL: \(pokemon.nextEvoLvl)"
                 
             }
+            evoLbl.text = str
         }
     }
     
