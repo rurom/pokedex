@@ -23,23 +23,30 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var evoLbl: UILabel!
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
-    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var grayBg: UIView!
+    @IBOutlet weak var loadingTxt: UILabel!
     
     var pokemon: Pokemon!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+                pokemon.downloadPokemonDetails {() -> () in
+                //this will be called after download is done
+               self.updateUI()
+                
+               self.activityIndicatorView.stopAnimating()
+               self.grayBg.isHidden = true
+               self.loadingTxt.isHidden = true
+            }
 
         nameLbl.text = pokemon.name.capitalized
         let img = UIImage(named: "\(pokemon.pokedexId)")
         mainImg.image = img
         currentEvoImg.image = img
         
-        pokemon.downloadPokemonDetails {() -> () in
-        //this will be called after download is done
-            self.updateUI()
-
-        }
+        
     }
     
     func updateUI() {
